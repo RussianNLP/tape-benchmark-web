@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+	<head>
+		<title>FewNLU</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<span class="logo"><img src="images/logo.png" alt="" /></span>
+						<h1><strong>TAPE Benchmark: The Assessing Few-shot Russian Language Understanding.</strong></h1>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html#intro" class="active">About</a></li>
+							<li><a href="https://arxiv.org/abs/2109.12742">Paper</a></li>
+							<li><a href="index.html#toolkit">Toolkit</a></li>
+							<li><a href="index.html#leaderboard">Leaderboard</a></li>
+							<li><a href="https://cloud.tsinghua.edu.cn/f/03b187bf3fff4a5fb1d1/?dl=1">Download</a></li>
+
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Introduction -->
+							<section id="intro" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2><strong>About to TAPE</strong></h2>
+										</header>
+										<p> Assessing Few-shot Russian Language Understanding.
+
+											TAPE (Text Attack and Perturbation Evaluation) is a novel benchmark for few-shot Russian language understanding evaluation that includes six complex NLU tasks, covering multi-hop reasoning, ethical concepts, logic and commonsense knowledge. The TAPE's design focuses on systematic zero-shot and few-shot NLU evaluation across different axes:
+											<ul><ul><ul><li> the standard deviation for understanding variability
+											</li>
+											<li> Unsubpopulations for nuanced interpretation</li>
+											<li>linguistic-oriented adversarial attacks and perturbations for analysing robustness.
+											</li>
+											</ul></ul></ul>
+											<p> General data collection principles of the TAPE are based on combining "intellectual abilities" needed to solve GLUE-like tasks, ranging from world knowledge to logic and commonsense reasoning. Based on the GLUE format, we have built six new datasets from the ground up, each of them requiring the modeling abilities of at least two skills:
+												<ul><ul><ul><li> treasoning and logic (Winograd scheme)
+												</li>
+												<li> reasoning and world knowledge (CheGeKa, and RuOpenBookQA and RuWorldTree)</li>
+												<li>multi-hop reasoning
+
+													(MultiQ)
+												</li>
+												</ul></ul></ul>
+									</div>
+								</div>
+							</section>
+
+						<!-- Second Section -->
+							<section id="toolkit" class="main special">
+								<header class="major">
+									<h2><strong>TAPE Toolkit</strong></h2>
+									<div class="alert1 alert1-info" role="alert1"> <code>@misc{https://doi.org/10.48550/arxiv.2210.12813,
+										doi = {10.48550/ARXIV.2210.12813},
+										
+										url = {https://arxiv.org/abs/2210.12813},
+										
+									   author = {Taktasheva, Ekaterina and Shavrina, Tatiana and Fenogenova, Alena and Shevelev, Denis and Katricheva, Nadezhda and Tikhonova, Maria and Akhmetgareeva, Albina and Zinkevich, Oleg and Bashmakova, Anastasiia and Iordanskaia, Svetlana and Spiridonova, Alena and Kurenshchikova, Valentina and Artemova, Ekaterina and Mikhailov, Vladislav},
+										
+										keywords = {Computation and Language (cs.CL), FOS: Computer and information sciences, FOS: Computer and information sciences},
+										
+										title = {TAPE: Assessing Few-shot Russian Language Understanding},
+										
+										publisher = {arXiv},
+										
+										year = {2022},
+										
+										copyright = {Creative Commons Attribution 4.0 International}
+									  }</code>
+									   </div>
+						<!-- Get Started -->
+							<section id="leaderboard" class="main special">
+								<header class="major">
+									<h2>Leaderboard</h2>
+								</header>
+								<p align="left">
+									<font size="3">
+									<strong><font size="4" color="red">Report your results:</font></strong>
+										If you have new results experimented with FewNLU, please send emails to
+										<a href = "mailto:fewnlu@gmail.com">fewnlu@gmail.com</a> or
+										<a href = "mailto:zyanan93@gmail.com">zyanan93@gmail.com</a> or
+										<a href = "mailto:zhouj18@mails.tsinghua.edu.cn">zhouj18@mails.tsinghua.edu
+											.cn</a>.
+										The goal of this leaderboard is to collect
+											research works under the evaluation framework and to measure the true
+										progress of the field.
+										So It is encouraged that you <strong><font color="red">attach a link to the
+										reproducible
+										source codes</font></strong>. Thank you!
+
+									</font>
+								</p>
+									<table>
+										<tbody>
+										<tr>
+											<th></th>
+											<th> <strong> Methods </strong> </th>
+											<th> <strong> URL </strong> </th>
+											<th> <strong> Base Model </strong> </th>
+											<th> <strong> BoolQ</br>(Acc) </strong> </th>
+											<th> <strong> RTE</br>(Acc) </strong> </th>
+											<th> <strong> WiC</br>(Acc) </strong> </th>
+											<th> <strong> CB</br>(Acc/F1) </strong> </th>
+											<th> <strong> MultiRC</br>(F1a/EM)</strong> </th>
+											<th> <strong> WSC</br>(Acc)</strong> </th>
+											<th> <strong> COPA</br>(Acc)</strong> </th>
+											<th> <strong> Avg. </strong> </th>
+										</tr>
+
+										<tr>
+											<th><sub>&#127775;</sub></th>
+											<th>Combined<sup>123</sup> </th>
+											<th><font size="3">
+												<a href="https://github.com/THUDM/FewNLU">(code)</a></br>
+												<a href="https://arxiv.org/abs/2109.12742">(desc)</a>
+											</font></th>
+											<th> <font size="3">DeBERTa</br>(xxlarge) </font></th>
+											<th> 84.00 </br><font size="3">±0.55<font></th>
+											<th> 85.70 </br><font size="3">±0.63<font></th>
+											<th> 69.60 </br><font size="3">±2.15<font></th>
+											<th> 95.10/93.60 </br><font size="3">±2.68/±2.62<font></th>
+											<th> 81.50/48.00 </br><font size="3">±0.76/±0.99<font></th>
+											<th> 88.40 </br><font size="3">±2.82<font></th>
+											<th> 93.80 </br><font size="3">±2.99<font></th>
+											<th> 85.44 </th>
+										</tr>
+										<tr>
+											<th>2</th>
+											<th> iPET (c)<sup>123</sup></th>
+											<th><font size="3">
+												<a href="https://github.com/THUDM/FewNLU">(code)</a></br>
+												<a href="https://arxiv.org/abs/2109.12742">(desc)</a>
+											</font></th>
+											<th> <font size="3">DeBERTa</br>(xxlarge) </font></th>
+											<th> 83.45 </br><font size="3">±0.90<font></th>
+											<th> 83.12 </br><font size="3">±1.04<font></th>
+											<th> 69.63 </br><font size="3">±2.15<font></th>
+											<th> 91.52/90.72 </br><font size="3">±3.05/±2.68<font></th>
+											<th> 79.92/44.96 </br><font size="3">±1.11/±3.13<font></th>
+											<th> 86.30 </br><font size="3">±1.64<font></th>
+											<th> 93.75 </br><font size="3">±2.99<font></th>
+											<th> 81.40 </th>
+										</tr>
+
+										<tr>
+											<th>3</th>
+											<th> noisy (c)<sup>123</sup></th>
+											<th><font size="3">
+												<a href="https://github.com/THUDM/FewNLU">(code)</a></br>
+												<a href="https://arxiv.org/abs/2109.12742">(desc)</a>
+											</font></th>
+											<th> <font size="3">DeBERTa</br>(xxlarge) </font></th>
+											<th> 82.19 </br><font size="3">±0.65<font></th>
+											<th> 81.95 </br><font size="3">±0.51<font></th>
+											<th> 68.26 </br><font size="3">±1.12<font></th>
+											<th> 90.18/86.74 </br><font size="3">±2.31/±3.00<font></th>
+											<th> 79.48/44.20 </br><font size="3">±2.53/±4.14<font></th>
+											<th> 83.41 </br><font size="3">±4.18<font></th>
+											<th> 93.75 </br><font size="3">±3.30<font></th>
+											<th> 79.98 </th>
+										</tr>
+									</table>
+								<p align="left" style="line-height:100%">
+									<font size="4">
+										<strong>Notes:</strong>
+										</br>
+										1. Unlabeled data are used.</br>
+										2. The ensemble technique is used.</br>
+										3. Using the data setting with 64 training examples. (Results under the 32-labeled data setting are to be released soon).</br>
+									</font>
+								</p>
+								</tbody>
+							</section>
+
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
