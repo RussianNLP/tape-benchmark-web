@@ -68,10 +68,28 @@
 							<section id="toolkit" class="main">
 								<header class="major">
 									<h2><strong>TAPE Toolkit</strong></h2>
+									<img src="images/pipeline.png" alt="Evaluation pipeline">
+									<p></p>
 									
-									<p>Installation</p>
+									<p><ul><ul><ul><li>(a) D<sub>test</sub> is passed to the adversarial framework to create the adversarial D<sub>test</sub> that includes the original and adversarial examples.</li>
+									<li>(b) We randomly sample five sets of demonstration examples from D<sub>train</sub> for each <code>k ∈ {1, 4, 8}</code>. In the zero-shot scenario, we skip this stage.</li>
+									<li>(c) After that, we merge the demonstrations, when applicable, with the examples from the adversarial Dtest to construct evaluation episodes.</li>
+									<li>(d) Each episode is used to obtain predictions from the model.</li>
+									<li>(e) The performance is summarized in a diagnostic evaluation report.</li>
+										</ul></ul></ul>
+									<p>The perturbations, included in the framework, can be divided into two categories:</p>
+
+									<ul><ul><ul><li><strong>Word-Level Perturbations:</strong> spelling (mimicking spelling mistakes) and modality (replacement of the input with emojis)</li>
+									<li><strong>Sentence-Level Perturbations:</strong> random (token deletion and swaps), distraction (generation of additional text) and paraphrases (generating context variations)</li>
+									</ul></ul></ul>
+
+									<p></p>
+									<h3>Dataset Structure</h3>
+									
+									<h3>Installation<h3>
         
 									      <p>RuTransform: Framework for adversarial attacks and perturbations</p>
+										<p><code>pip install rutransform</code></p>
 									      <p></p>
 
 									      <p>Cite us:</p>
