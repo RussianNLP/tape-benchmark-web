@@ -186,6 +186,102 @@ episode: [<span class="hljs-number">15</span>],
 											<h2><strong>RuWorldTree</strong></h2>
 										</header>
 										<p>See detailed model performance for the baseline models:</p>
+<p>RuWorldTree is a QA dataset with multiple-choice elementary-level science questions, which evaluate the understanding of core science facts.</p>
+<h3 id="-motivation-"><strong>Motivation</strong></h3>
+<p>The WorldTree dataset starts the triad of the Reasoning and Knowledge tasks. The data includes the corpus of factoid utterances of various kinds, complex factoid questions and a corresponding causal chain of facts from the corpus resulting in a correct answer.</p>
+<p>The WorldTree design was originally proposed in <a href="https://aclanthology.org/L18-1433/">(Jansen et al., 2018)</a>.</p>
+<h3 id="dataset-composition">Dataset Composition</h3>
+<h4 id="-data-instances-"><strong>Data Instances</strong></h4>
+<p>Each instance in the datasets is a multiple-choice science question with 4 answer options. </p>
+<pre><code>{
+    <span class="hljs-string">'question'</span>: <span class="hljs-string">'Тунец - это океаническая рыба, которая хорошо приспособлена для ловли мелкой, быстро движущейся добычи. Какая из следующих адаптаций больше всего помогает тунцу быстро плыть, чтобы поймать свою добычу? (A) большие плавники (B) острые зубы (C) маленькие жабры (D) жесткая чешуя'</span>, 
+    <span class="hljs-string">'answer'</span>: <span class="hljs-string">'A'</span>, 
+    <span class="hljs-string">'exam_name'</span>: <span class="hljs-string">'MCAS'</span>,
+    <span class="hljs-string">'school_grade'</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-string">'knowledge_type'</span>: <span class="hljs-string">'CAUSAL,MODEL'</span>,
+    <span class="hljs-string">'perturbation'</span>: <span class="hljs-string">'ru_worldtree'</span>, 
+    <span class="hljs-string">'episode'</span>: [<span class="hljs-number">18</span>, <span class="hljs-number">10</span>, <span class="hljs-number">11</span>]
+}
+</code></pre><p>An example in English for illustration purposes:</p>
+<pre><code>{
+    <span class="hljs-symbol">'question</span>': <span class="hljs-symbol">'A</span> bottle <span class="hljs-keyword">of</span> water <span class="hljs-keyword">is</span> placed <span class="hljs-keyword">in</span> the freezer. What property <span class="hljs-keyword">of</span> water will change <span class="hljs-keyword">when</span> the water reaches the freezing point? (A) color (B) mass (C) state <span class="hljs-keyword">of</span> matter (D) weight', 
+    <span class="hljs-symbol">'answer</span>': <span class="hljs-string">'C'</span>, 
+    <span class="hljs-symbol">'exam_name</span>': <span class="hljs-symbol">'MEA</span>',
+    <span class="hljs-symbol">'school_grade</span>': <span class="hljs-number">5</span>,
+    <span class="hljs-symbol">'knowledge_type</span>': <span class="hljs-symbol">'NO</span> <span class="hljs-keyword">TYPE</span>',
+    <span class="hljs-symbol">'perturbation</span>': <span class="hljs-symbol">'ru_worldtree</span>', 
+    <span class="hljs-symbol">'episode</span>': [<span class="hljs-number">18</span>, <span class="hljs-number">10</span>, <span class="hljs-number">11</span>]
+}
+</code></pre><h4 id="-data-fields-"><strong>Data Fields</strong></h4>
+<ul>
+<li><code>text</code>: a string containing the sentence text</li>
+<li><code>answer</code>: a string with a candidate for the coreference resolution</li>
+<li><code>options</code>: a list of all the possible candidates present in the text</li>
+<li><code>reference</code>: a string containing an anaphor (a word or phrase that refers back to an earlier word or phrase)</li>
+<li><code>homonymia_type</code>: a float corresponding to the type of the structure with syntactic homonymy</li>
+<li><code>label</code>: an integer, either 0 or 1, indicating whether the homonymy is resolved correctly or not</li>
+<li><code>perturbation</code>: a string containing the name of the perturbation applied to text. If no perturbation was applied, the dataset name is used</li>
+<li><code>episode</code>: a list of episodes in which the instance is used. Only used for the train set</li>
+</ul>
+<h4 id="-data-splits-"><strong>Data Splits</strong></h4>
+<p>The dataset consists of a training set with labeled examples and a test set in two configurations:</p>
+<ul>
+<li><code>raw data</code>: includes the original data with no additional sampling</li>
+<li><code>episodes</code>: data is split into evaluation episodes and includes several perturbations of test for robustness evaluation</li>
+</ul>
+<p>We use the same splits of data as in the original English version.</p>
+<h4 id="-test-perturbations-"><strong>Test Perturbations</strong></h4>
+<p>Each training episode in the dataset corresponds to seven test variations, including the original test data and six adversarial test sets, acquired through the modification of the original test through the following text perturbations: </p>
+<ul>
+<li><strong>ButterFingers</strong>: randomly adds noise to data by mimicking spelling mistakes made by humans through character swaps based on their keyboard distance </li>
+<li><strong>Emojify</strong>: replaces the input words with the corresponding emojis, preserving their original meaning </li>
+<li><strong>EDA<sub>delete</sub></strong>: randomly deletes tokens in the text</li>
+<li><strong>EDA<sub>swap</sub></strong>: randomly swaps tokens in the text</li>
+<li><strong>BackTranslation</strong>: generates variations of the context through back-translation (ru -&gt; en -&gt; ru) </li>
+<li><strong>AddSent</strong>: replaces one or more choice options with a generated one</li>
+</ul>
+<h3 id="-general-statistics-"><strong>General Statistics</strong></h3>
+<p>The following table contains the number of examples in each data split and the label distribution:</p>
+<table>
+<thead>
+<tr>
+<th>Split</th>
+<th>Size (Original/Perturbed)</th>
+<th>Label Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Train.raw</td>
+<td>118</td>
+<td>28.81 / 26.27 / 22.88 / 22.03</td>
+</tr>
+<tr>
+<td>Test.raw</td>
+<td>633</td>
+<td>22.1 / 27.5 / 25.6 / 24.8</td>
+</tr>
+<tr>
+<td>Train.episodes</td>
+<td>47</td>
+<td>29.79 / 23.4 / 23.4 / 23.4</td>
+</tr>
+<tr>
+<td>Test.episodes</td>
+<td>629 / 4403</td>
+<td>22.1 / 27.5 / 25.6 / 24.8</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>Original</code> - original test data without adversarial perturbations</li>
+<li><code>Perturbed</code> - perturbed test, containing both original data and its perturbations</li>
+</ul>
+<h3 id="dataset-creation">Dataset Creation</h3>
+<h4 id="-data-source-"><strong>Data Source</strong></h4>
+<p>The questions for the dataset are taken from the original WorldTree dataset, which was sourced from the AI2 Science Questions V2 corpus, consisting of both standardized exam questions from 12 US states, and the AI2 Science Questions Mercury dataset, a set of questions licensed from a student assessment entity.</p>
+<h4 id="-data-collection-"><strong>Data Collection</strong></h4>
+<p>The dataset mainly consists of automatic translation of the English WorldTree Corpus and human validation and correction. </p>
 
 
 											
