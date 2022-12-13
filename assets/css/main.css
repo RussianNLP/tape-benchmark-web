@@ -240,9 +240,12 @@ input, select, textarea {
 	}
 
 	sub {
-		font-size: 0.8em;
+		font-size: 0.6em;
 		position: relative;
-		top: 0.5em;
+		top: -0.2em;
+                color: #555;
+                padding: 4px;
+                font-weight: 500;
 	}
 
 	sup {
@@ -3820,5 +3823,9 @@ input, select, textarea {
   > p + p {
     margin-top: 5px;
   }
+}
+
+.t-header {
+	font-size: initial;
 }
 

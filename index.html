@@ -1,359 +1,628 @@
 <!DOCTYPE HTML>
 
 <html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
-	<head>
-		<title>TAPE Benchmark</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<head>
+	<title>TAPE Benchmark</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<span class="logo"><img src="images/logo.png" alt="" /></span>
-						<h1><strong>TAPE Benchmark: Assessing Few-shot Russian Language Understanding</strong></h1>
-					</header>
+<body class="is-preload">
 
-				<!-- Nav -->
-					<nav id="nav">
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt">
+			<span class="logo"><img src="images/logo.png" alt="" /></span>
+			<h1><strong>TAPE Benchmark: Assessing Few-shot Russian Language Understanding</strong></h1>
+		</header>
+
+		<!-- Nav -->
+		<nav id="nav">
+			<ul>
+				<li><a href="index.html#intro" class="active">About</a></li>
+				<li><a href="https://arxiv.org/abs/2210.12813" target="_blank">Paper</a></li>
+				<li><a href="index.html#toolkit">Toolkit</a></li>
+				<li><a href="index.html#leaderboard">Leaderboard</a></li>
+				<li><a href="datasets.html#intro">Datasets</a></li>
+				<li><a href="baselines.html#intro">Baselines</a></li>
+
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Introduction -->
+			<section id="intro" class="main">
+				<div class="spotlight">
+					<div class="content">
+						<header class="major">
+							<h2><strong>About TAPE</strong></h2>
+						</header>
+						<p> Assessing Few-shot Russian Language Understanding.</p>
+
+						<p>TAPE (Text Attack and Perturbation Evaluation) is a novel benchmark for few-shot Russian
+							language understanding evaluation that includes six complex NLU tasks, covering multi-hop
+							reasoning, ethical concepts, logic and commonsense knowledge. The TAPE's design focuses on
+							systematic zero-shot and few-shot NLU evaluation across different axes:
+							<ul>
+								<ul>
+									<ul>
+										<li>the standard deviation for understanding variability
+										</li>
+										<li>subpopulations for nuanced interpretation</li>
+										<li>linguistic-oriented adversarial attacks and perturbations for analysing
+											robustness.
+										</li>
+									</ul>
+								</ul>
+							</ul>
+							<p> General data collection principles of the TAPE are based on combining "intellectual
+								abilities" needed to solve GLUE-like tasks, ranging from world knowledge to logic and
+								commonsense reasoning. Based on the GLUE format, we have built six new datasets from the
+								ground up, each of them requiring the modeling abilities of at least two skills:
+								<ul>
+									<ul>
+										<ul>
+											<li> Logical reasoning (Winograd scheme)
+											</li>
+											<li> Reasoning with world knowledge (RuOpenBookQA, RuWorldTree, MultiQ, and
+												CheGeKa</li>
+											<li> Multi-hop reasoning (MultiQ)
+											</li>
+											<li> Ethical judgments and reasoning (Ethics)
+											</li>
+										</ul>
+									</ul>
+								</ul>
+					</div>
+				</div>
+			</section>
+
+			<!-- Second Section -->
+			<section id="toolkit" class="main">
+				<header class="major">
+					<h2><strong>TAPE Toolkit</strong></h2>
+					<img src="images/pipeline.png" alt="Evaluation pipeline" width="700">
+					<p></p>
+
+					<p>
 						<ul>
-							<li><a href="index.html#intro" class="active">About</a></li>
-							<li><a href="https://arxiv.org/abs/2210.12813" target="_blank">Paper</a></li>
-							<li><a href="index.html#toolkit">Toolkit</a></li>
-							<li><a href="index.html#leaderboard">Leaderboard</a></li>
-                                                        <li><a href="datasets.html#intro">Datasets</a></li>
-							<li><a href="baselines.html#intro">Baselines</a></li>
-
-						</ul>
-					</nav>
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Introduction -->
-							<section id="intro" class="main">
-								<div class="spotlight">
-									<div class="content">
-										<header class="major">
-											<h2><strong>About TAPE</strong></h2>
-										</header>
-										<p> Assessing Few-shot Russian Language Understanding.</p>
-
-											<p>TAPE (Text Attack and Perturbation Evaluation) is a novel benchmark for few-shot Russian language understanding evaluation that includes six complex NLU tasks, covering multi-hop reasoning, ethical concepts, logic and commonsense knowledge. The TAPE's design focuses on systematic zero-shot and few-shot NLU evaluation across different axes:
-											<ul><ul><ul>
-												<li>the standard deviation for understanding variability
-											</li>
-											<li>subpopulations for nuanced interpretation</li>
-											<li>linguistic-oriented adversarial attacks and perturbations for analysing robustness.
-											</li>
-											</ul></ul></ul>
-											<p> General data collection principles of the TAPE are based on combining "intellectual abilities" needed to solve GLUE-like tasks, ranging from world knowledge to logic and commonsense reasoning. Based on the GLUE format, we have built six new datasets from the ground up, each of them requiring the modeling abilities of at least two skills:
-												<ul><ul><ul><li> Logical reasoning (Winograd scheme)
-												</li>
-												<li> Reasoning with world knowledge (RuOpenBookQA, RuWorldTree, MultiQ, and CheGeKa</li>
-												<li> Multi-hop reasoning (MultiQ)
-												</li>
-												<li> Ethical judgments and reasoning (Ethics)
-												</li>
-												</ul></ul></ul>
-									</div>
-								</div>
-							</section>
-
-						<!-- Second Section -->
-							<section id="toolkit" class="main">
-								<header class="major">
-									<h2><strong>TAPE Toolkit</strong></h2>
-									<img src="images/pipeline.png" alt="Evaluation pipeline" width="700">
-									<p></p>
-									
-									<p><ul><ul><ul><li>(a) D<sub>test</sub> is passed to the adversarial framework to create the adversarial D<sub>test</sub> that includes the original and adversarial examples.</li>
-									<li>(b) We randomly sample five sets of demonstration examples from D<sub>train</sub> for each <code>k ∈ {1, 4, 8}</code>. In the zero-shot scenario, we skip this stage.</li>
-									<li>(c) After that, we merge the demonstrations, when applicable, with the examples from the adversarial Dtest to construct evaluation episodes.</li>
+							<ul>
+								<ul>
+									<li>(a) D<sub>test</sub> is passed to the adversarial framework to create the
+										adversarial D<sub>test</sub> that includes the original and adversarial
+										examples.</li>
+									<li>(b) We randomly sample five sets of demonstration examples from
+										D<sub>train</sub> for each <code>k ∈ {1, 4, 8}</code>. In the zero-shot
+										scenario, we skip this stage.</li>
+									<li>(c) After that, we merge the demonstrations, when applicable, with the examples
+										from the adversarial Dtest to construct evaluation episodes.</li>
 									<li>(d) Each episode is used to obtain predictions from the model.</li>
 									<li>(e) The performance is summarized in a diagnostic evaluation report.</li>
-										</ul></ul></ul>
-									<p>The perturbations, included in the framework, can be divided into two categories:</p>
+								</ul>
+							</ul>
+						</ul>
+						<p>The perturbations, included in the framework, can be divided into two categories:</p>
 
-									<ul><ul><ul><li><strong>Word-Level Perturbations:</strong> spelling (mimicking spelling mistakes) and modality (replacement of the input with emojis)</li>
-									<li><strong>Sentence-Level Perturbations:</strong> random (token deletion and swaps), distraction (generation of additional text) and paraphrases (generating context variations)</li>
-									</ul></ul></ul>
+						<ul>
+							<ul>
+								<ul>
+									<li><strong>Word-Level Perturbations:</strong> spelling (mimicking spelling
+										mistakes) and modality (replacement of the input with emojis)</li>
+									<li><strong>Sentence-Level Perturbations:</strong> random (token deletion and
+										swaps), distraction (generation of additional text) and paraphrases (generating
+										context variations)</li>
+								</ul>
+							</ul>
+						</ul>
 
-									<p></p>
-									
-									<h3>Installation</h3>
-									<p></p>
-        
-									<p>RuTransform: Framework for adversarial attacks and perturbations</p>
-									<p><code>!pip install rutransform</code></p>
-									<p></p>
+						<p></p>
 
-									<p>Cite us:</p>
-        
-									<div class="alert1 alert1-info" role="alert1"> <code>@misc{https://doi.org/10.48550/arxiv.2210.12813,
-										doi = {10.48550/ARXIV.2210.12813},
-										
-										url = {https://arxiv.org/abs/2210.12813},
-										
-									   author = {Taktasheva, Ekaterina and Shavrina, Tatiana and Fenogenova, Alena and Shevelev, Denis and Katricheva, Nadezhda and Tikhonova, Maria and Akhmetgareeva, Albina and Zinkevich, Oleg and Bashmakova, Anastasiia and Iordanskaia, Svetlana and Spiridonova, Alena and Kurenshchikova, Valentina and Artemova, Ekaterina and Mikhailov, Vladislav},
-										
-										keywords = {Computation and Language (cs.CL), FOS: Computer and information sciences, FOS: Computer and information sciences},
-										
-										title = {TAPE: Assessing Few-shot Russian Language Understanding},
-										
-										publisher = {arXiv},
-										
-										year = {2022},
-										
-										copyright = {Creative Commons Attribution 4.0 International}
-									  }</code>
-									   </div>
+						<h3>Installation</h3>
+						<p></p>
+
+						<p>RuTransform: Framework for adversarial attacks and perturbations</p>
+						<p><code>!pip install rutransform</code></p>
+						<p></p>
+
+						<p>Cite us:</p>
+
+						<div class="alert1 alert1-info" role="alert1">
+							<code>@misc{https://doi.org/10.48550/arxiv.2210.12813,
+								doi = {10.48550/ARXIV.2210.12813},
+
+								url = {https://arxiv.org/abs/2210.12813},
+
+								author = {Taktasheva, Ekaterina and Shavrina, Tatiana and Fenogenova, Alena and
+								Shevelev, Denis and Katricheva, Nadezhda and Tikhonova, Maria and Akhmetgareeva, Albina
+								and Zinkevich, Oleg and Bashmakova, Anastasiia and Iordanskaia, Svetlana and
+								Spiridonova, Alena and Kurenshchikova, Valentina and Artemova, Ekaterina and Mikhailov,
+								Vladislav},
+
+								keywords = {Computation and Language (cs.CL), FOS: Computer and information sciences,
+								FOS: Computer and information sciences},
+
+								title = {TAPE: Assessing Few-shot Russian Language Understanding},
+
+								publisher = {arXiv},
+
+								year = {2022},
+
+								copyright = {Creative Commons Attribution 4.0 International}
+								}</code>
+						</div>
 						<!-- Get Started -->
-							<section id="leaderboard" class="main">
-								<header class="major">
-									<h2><strong>Leaderboard</strong></h2>
-								</header>
-								<p align="left">
-									<font size="3">
-									<strong><font size="4" color="red">Report your results:</font></strong>
-										If you have new results experimented with TAPE, please open a pull request or send emails to
-										<a href = "mailto:tapebenchmark@gmail.com">tapebenchmark@gmail.com</a> or
+						<section id="leaderboard" class="main">
+							<header class="major">
+								<h2><strong>Leaderboard</strong></h2>
+							</header>
+							<p align="left">
+								<font size="3">
+									<strong>
+										<font size="4" color="red">Report your results:</font>
+									</strong>
+									If you have new results experimented with TAPE, please open a pull request or send
+									emails to
+									<a href="mailto:tapebenchmark@gmail.com">tapebenchmark@gmail.com</a> or
 
-										The goal of this leaderboard is to collect
-											research works under the evaluation framework and to measure the true
-										progress of the field.
-										So It is encouraged that you <strong><font color="red">attach a link to the
-										reproducible
-										source codes</font></strong>. Thank you!
+									The goal of this leaderboard is to collect
+									research works under the evaluation framework and to measure the true
+									progress of the field.
+									So It is encouraged that you <strong>
+										<font color="red">attach a link to the
+											reproducible
+											source codes</font>
+									</strong>. Thank you!
 
-									</font>
-								</p>
-								        <table style="width:100%">
-							
-							  <tr>
-							    <td><b>Model</b></td>
-							    <td><b><i>k</i>-shot</b></td>
-							    <td><b>Winograd</b></td>
-							    <td><b>RuWorldTree</b></td>
-							    <td><b>RuOpenBookQA</b></td>
-							    <td><b>MultiQ</b></td>
-							    <td><b>CheGeKa</b></td>
-							    <td><b>Ethics<sub>1</sub></b></td>
-							    <td><b>Ethics<sub>2</sub></b></td>
-							    <td><b>Avg</b></td>
-							  </tr>
-							 <tr>
-							   <td>Random</td>
-							    <td>&#x2717;</td>
-							    <td>51.7 / 51.3</td>
-							    <td>26.0 / 26.1</td>
-							    <td>21.4 / 21.6</td>
-							    <td>&#x2717;</td>
-							    <td>&#x2717;</td>
-							    <td>36.5 / 47.9</td>
-							    <td>54.1 / 52.0</td>
-							    <td>&#x2717;</td>
-							  </tr>
+								</font>
+							</p>
+							<table style="width:100%">
 
-							  <tr>
-							   <td>Linear</td>
-							    <td>&#x2717;</td>
-							    <td>36.7 / 58.0</td>
-							    <td>14.3 / 25.8</td>
-							    <td>11.4 / 25.2</td>
-							    <td>&#x2717;</td>
-							    <td>&#x2717;</td>
-							    <td>0.0 / 68.6</td>
-							    <td>49.0 / 65.3</td>
-							    <td>&#x2717;</td>
-							  </tr>
+								<tr class="t-header">
+									<td><b>Model</b></td>
+									<td><b><i>k</i>-shot</b></td>
+									<td><b>Winograd</b></td>
+									<td><b>RuWorldTree</b></td>
+									<td><b>RuOpenBookQA</b></td>
+									<td><b>MultiQ</b></td>
+									<td><b>CheGeKa</b></td>
+									<td><b>Ethics<sub>1</sub></b></td>
+									<td><b>Ethics<sub>2</sub></b></td>
+									<td><b>Avg</b></td>
+								</tr>
+								<tr>
+									<td>Random</td>
+									<td>&#x2717;</td>
+									<td>51.7</td>
+									<td>26.0</td>
+									<td>21.4</td>
+									<td>&#x2717;</td>
+									<td>&#x2717;</td>
+									<td>36.5</td>
+									<td>54.1</td>
+									<td>&#x2717;</td>
+								</tr>
 
-							  <tr>
-							   <td>Human</td>
-							    <td>&#x2717;</td>
-							    <td>86.6 / 87.0</td>
-							    <td>83.8 / 83.7</td>
-							    <td>87.5 / 86.5</td>
-							    <td>92.8 / 91.0</td>
-							    <td>71.9 / 64.5</td>
-							    <td>51.0 / 52.9</td>
-							    <td>73.0 / 67.6</td>
-							    <td>78.09 / 76.17</td>
-							  </tr>
+								<tr>
+									<td>Linear</td>
+									<td>&#x2717;</td>
+									<td>36.7</td>
+									<td>14.3</td>
+									<td>11.4</td>
+									<td>&#x2717;</td>
+									<td>&#x2717;</td>
+									<td>0.0</td>
+									<td>49.0</td>
+									<td>&#x2717;</td>
+								</tr>
 
-							  <tr>
-							    <td rowspan="4"><a href="https://huggingface.co/sberbank-ai/rugpt3small_based_on_gpt2" target="_blank">ruGPT-3 small</a></td>
-							    <td>0</td>
-							    <td>38.6 / 57.9</td>
-							    <td>34.1 / 34.0</td>
-							    <td>33.9 / 34.0</td>
-							    <td>0.17 / 0.0</td>
-							    <td>1.0 / 0.0</td>
-							    <td>34.1 / 55.5</td>
-							    <td>48.5 / 60.9</td>
-							    <td>27.24 / 34.64</td>
-							  </tr>
+								<tr>
+									<td>Human</td>
+									<td>&#x2717;</td>
+									<td>86.6</td>
+									<td>83.8</td>
+									<td>87.5</td>
+									<td>92.8</td>
+									<td>71.9</td>
+									<td>51.0</td>
+									<td>73.0</td>
+									<td>78.09</td>
+								</tr>
 
-							  <tr>
-							    <td>1</td>
-							    <td>36.7 <sub>&plusmn;0.0</sub> / 58.0 <sub>&plusmn;0.0</sub></td>
-							    <td>33.5 <sub>&plusmn;0.4</sub> / 33.5 <sub>&plusmn;0.4</sub></td>
-							    <td>34.9 <sub>&plusmn;0.8</sub> / 35.0 <sub>&plusmn;0.8</sub></td>
-							    <td>0.13 <sub>&plusmn;0.04</sub> / 0.0 <sub>&plusmn;0.0</sub></td>
-							    <td>0.52 <sub>&plusmn;0.14</sub> / 0.0 <sub>&plusmn;0.0</sub></td>
-							    <td>14.3 <sub>&plusmn;11.1</sub> / 59.9 <sub>&plusmn;5.8</sub></td>
-							    <td>49.6 <sub>&plusmn;7.1</sub> / 60.8 <sub>&plusmn;5.7</sub></td>
-							    <td>24.24 / 35.33</td>
-							  </tr>
+								<tr>
+									<td rowspan="4"><a
+											href="https://huggingface.co/sberbank-ai/rugpt3small_based_on_gpt2"
+											target="_blank">ruGPT-3 small</a></td>
+									<td>0</td>
+									<td>38.6</td>
+									<td>34.1</td>
+									<td>33.9</td>
+									<td>0.17</td>
+									<td>1.0 </td>
+									<td>34.1</td>
+									<td>48.5</td>
+									<td>27.24</td>
+								</tr>
 
-							  <tr>
-							    <td>4</td>
-							    <td>41.0 <sub>&plusmn;5.3</sub> / 54.8 <sub>&plusmn;3.9</sub></td>
-							    <td>34.3 <sub>&plusmn;0.9</sub> / 34.3 <sub>&plusmn;0.9</sub></td>
-							    <td>34.6 <sub>&plusmn;0.6</sub> / 34.6 <sub>&plusmn;0.6</sub></td>
-							    <td>0.09 <sub>&plusmn;0.06</sub> / 0.0 <sub>&plusmn;0.0</sub></td>
-							    <td>0.62 <sub>&plusmn;0.34</sub> / 0.65 <sub>&plusmn;0.29</sub></td>
-							    <td>23.5 <sub>&plusmn;13.8</sub> / 54.3 <sub>&plusmn;12.3</sub></td>
-							    <td>56.7 <sub>&plusmn;10.8</sub> / 61.3 <sub>&plusmn;5.0</sub></td>
-							    <td>27.44 / 34.31</td>
-							  </tr>
+								<tr>
+									<td>1</td>
+									<td>36.7 <sub>&plusmn;0.0</sub></td>
+									<td>33.5 <sub>&plusmn;0.4</sub></td>
+									<td>34.9 <sub>&plusmn;0.8</sub></td>
+									<td>0.13 <sub>&plusmn;0.04</sub></td>
+									<td>0.52 <sub>&plusmn;0.14</sub></td>
+									<td>14.3 <sub>&plusmn;11.1</sub></td>
+									<td>49.6 <sub>&plusmn;7.1</sub></td>
+									<td>24.24</td>
+								</tr>
 
-							  <tr>
-							    <td>8</td>
-							    <td>36.9 <sub>&plusmn;0.4</sub> / 54.8 <sub>&plusmn;6.5</sub></td>
-							    <td>35.1 <sub>&plusmn;0.9</sub> / 35.1 <sub>&plusmn;0.8</sub></td>
-							    <td>33.6 <sub>&plusmn;0.5</sub> / 33.7 <sub>&plusmn;0.5</sub></td>
-							    <td>0.12 <sub>&plusmn;0.22</sub> / 0.0 <sub>&plusmn;0.0</sub></td>
-							    <td>0.35 <sub>&plusmn;0.26</sub> / 0.35 <sub>&plusmn;0.26</sub></td>
-							    <td>32.4 <sub>&plusmn;6.9</sub> / 50.4 <sub>&plusmn;4.0</sub></td>
-							    <td>63.7 <sub>&plusmn;9.5</sub> / 61.7 <sub>&plusmn;4.2</sub></td>
-							    <td>29.04 / 33.56</td>
-							  </tr>
+								<tr>
+									<td>4</td>
+									<td>41.0 <sub>&plusmn;5.3</sub></td>
+									<td>34.3 <sub>&plusmn;0.9</sub></td>
+									<td>34.6 <sub>&plusmn;0.6</sub></td>
+									<td>0.09 <sub>&plusmn;0.06</sub></td>
+									<td>0.62 <sub>&plusmn;0.34</sub></td>
+									<td>23.5 <sub>&plusmn;13.8</sub></td>
+									<td>56.7 <sub>&plusmn;10.8</sub></td>
+									<td>27.44</td>
+								</tr>
 
-
-							  <tr>
-							    <td rowspan="4"><a href="https://huggingface.co/sberbank-ai/rugpt3medium_based_on_gpt2" target="_blank">ruGPT-3 medium</a></td>
-							    <td>0</td>
-							    <td>39.5 / 57.2</td>
-							    <td>38.0 / 38.0</td>
-							    <td>34.8 / 34.8</td>
-							    <td>0.18 / 0.0</td>
-							    <td>0.75 / 0.0</td>
-							    <td>2.4 / 68.3</td>
-							    <td>5.3 / 44.1</td>
-							    <td>17.29 / 34.71</td>
-							  </tr>
-
-							  <tr>
-							    <td>1</td>
-							    <td>36.7 <sub>&plusmn;0.0</sub> / 58.0 <sub>&plusmn;0.0</sub></td>
-							    <td>36.3 <sub>&plusmn;0.6</sub> / 36.3 <sub>&plusmn;0.6</sub></td>
-							    <td>36.7 <sub>&plusmn;0.8</sub> / 36.8 <sub>&plusmn;0.8</sub></td>
-							    <td>0.11 <sub>&plusmn;0.03</sub> / 0.0 <sub>&plusmn;0.0</sub></td>
-							    <td>0.47 <sub>&plusmn;0.11</sub> / 0.0 <sub>&plusmn;0.0</sub></td>
-							    <td>14.3 <sub>&plusmn;11.1</sub> / 59.9 <sub>&plusmn;5.8</sub></td>
-							    <td>49.6 <sub>&plusmn;7.1</sub> / 60.8 <sub>&plusmn;5.7</sub></td>
-							    <td>24.9 / 35.99</td>
-							  </tr>
-
-							  <tr>
-							    <td>4</td>
-							    <td>39.7 <sub>&plusmn;4.1</sub> / 57.9 <sub>&plusmn;0.6</sub></td>
-							    <td>38.9 <sub>&plusmn;1.0</sub> / 38.8 <sub>&plusmn;1.0</sub></td>
-							    <td>36.3 <sub>&plusmn;1.3</sub> / 36.4 <sub>&plusmn;1.3</sub></td>
-							    <td>0.12 <sub>&plusmn;0.18</sub> / 0.0 <sub>&plusmn;0.0</sub></td>
-							    <td>0.85 <sub>&plusmn;0.52</sub> / 0.92 <sub>&plusmn;0.53</sub></td>
-							    <td>14.9 <sub>&plusmn;16.0</sub> / 58.6 <sub>&plusmn;13.1</sub></td>
-							    <td>45.5 <sub>&plusmn;13.7</sub> / 59.0 <sub>&plusmn;7.3</sub></td>
-							    <td>25.57 / 35.74</td>
-							  </tr>
-
-							  <tr>
-							    <td>8</td>
-							    <td>39.0 <sub>&plusmn;5.9</sub> / 54.3 <sub>&plusmn;6.5</sub></td>
-							    <td>40.1 <sub>&plusmn;0.5</sub> / 40.1 <sub>&plusmn;0.5</sub></td>
-							    <td>35.7 <sub>&plusmn;0.9</sub> / 35.8 <sub>&plusmn;1.0</sub></td>
-							    <td>0.1 <sub>&plusmn;0.15</sub> / 0.0 <sub>&plusmn;0.0</sub></td>
-							    <td>0.42 <sub>&plusmn;0.19</sub> / 0.42 <sub>&plusmn;0.19</sub></td>
-							    <td>19.6 <sub>&plusmn;10.6</sub> / 60.1 <sub>&plusmn;5.1</sub></td>
-							    <td>57.7 <sub>&plusmn;9.0</sub> / 64.2 <sub>&plusmn;2.1</sub></td>
-							    <td>27.78 / 36.83</td>
-							  </tr>
+								<tr>
+									<td>8</td>
+									<td>36.9 <sub>&plusmn;0.4</sub></td>
+									<td>35.1 <sub>&plusmn;0.9</sub></td>
+									<td>33.6 <sub>&plusmn;0.5</sub></td>
+									<td>0.12 <sub>&plusmn;0.22</sub></td>
+									<td>0.35 <sub>&plusmn;0.26</sub></td>
+									<td>32.4 <sub>&plusmn;6.9</sub></td>
+									<td>63.7 <sub>&plusmn;9.5</sub></td>
+									<td>29.04</td>
+								</tr>
 
 
-							  <tr>
-							    <td rowspan="4"><a href="https://huggingface.co/sberbank-ai/rugpt3large_based_on_gpt2" target="_blank">ruGPT-3 large</a></td>
-							    <td>0</td>
-							    <td>39.2 / 55.5</td>
-							    <td>40.8 / 40.7</td>
-							    <td>39.6 / 39.6</td>
-							    <td>0.14 / 0.0</td>
-							    <td>0.57 / 0.0</td>
-							    <td>0.3 / 68.6</td>
-							    <td>8.0 / 44.9</td>
-							    <td>18.15 / 35.73</td>
-							  </tr>
+								<tr>
+									<td rowspan="4"><a
+											href="https://huggingface.co/sberbank-ai/rugpt3medium_based_on_gpt2"
+											target="_blank">ruGPT-3 medium</a></td>
+									<td>0</td>
+									<td>39.5</td>
+									<td>38.0</td>
+									<td>34.8</td>
+									<td>0.18</td>
+									<td>0.75</td>
+									<td>2.4</td>
+									<td>5.3</td>
+									<td>17.29</td>
+								</tr>
 
-							  <tr>
-							    <td>1</td>
-							    <td>36.7 <sub>&plusmn;0.0</sub> / 58.0 <sub>&plusmn;0.0</sub></td>
-							    <td>38.2 <sub>&plusmn;0.8</sub> / 38.2 <sub>&plusmn;0.8</sub></td>
-							    <td>39.8 <sub>&plusmn;1.0</sub> / 39.8 <sub>&plusmn;1.1</sub></td>
-							    <td>0.12 <sub>&plusmn;0.4</sub> / 0.0 <sub>&plusmn;0.0</sub></td>
-							    <td>0.47 <sub>&plusmn;0.11</sub> / 0.0 <sub>&plusmn;0.0</sub></td>
-							    <td>14.3 <sub>&plusmn;11.1</sub> / 59.9 <sub>&plusmn;5.8</sub></td>
-							    <td>49.6 <sub>&plusmn;7.1</sub> / 60.8 <sub>&plusmn;5.7</sub></td>
-							    <td>25.6 / 36.69</td>
-							  </tr>
+								<tr>
+									<td>1</td>
+									<td>36.7 <sub>&plusmn;0.0</sub> </td>
+									<td>36.3 <sub>&plusmn;0.6</sub> </td>
+									<td>36.7 <sub>&plusmn;0.8</sub> </td>
+									<td>0.11 <sub>&plusmn;0.03</sub></td>
+									<td>0.47 <sub>&plusmn;0.11</sub></td>
+									<td>14.3 <sub>&plusmn;11.1</sub></td>
+									<td>49.6 <sub>&plusmn;7.1</sub> </td>
+									<td>24.9</td>
+								</tr>
 
-							  <tr>
-							    <td>4</td>
-							    <td>38.8 <sub>&plusmn;2.9</sub> / 58.4 <sub>&plusmn;0.5</sub></td>
-							    <td>40.9 <sub>&plusmn;0.8</sub> / 40.8 <sub>&plusmn;0.8</sub></td>
-							    <td>39.6 <sub>&plusmn;0.8</sub> / 39.6 <sub>&plusmn;0.8</sub></td>
-							    <td>0.1 <sub>&plusmn;0.14</sub> / 0.0 <sub>&plusmn;0.0</sub></td>
-							    <td>0.54 <sub>&plusmn;0.44</sub> / 0.54 <sub>&plusmn;0.4</sub></td>
-							    <td>11.8 <sub>&plusmn;12.4</sub> / 60.4 <sub>&plusmn;11.1</sub></td>
-							    <td>44.5 <sub>&plusmn;15/9</sub> / 59.6 <sub>&plusmn;8.1</sub></td>
-							    <td>25.1 / 36.96</td>
-							  </tr>
+								<tr>
+									<td>4</td>
+									<td>39.7 <sub>&plusmn;4.1</sub> </td>
+									<td>38.9 <sub>&plusmn;1.0</sub> </td>
+									<td>36.3 <sub>&plusmn;1.3</sub> </td>
+									<td>0.12 <sub>&plusmn;0.18</sub></td>
+									<td>0.85 <sub>&plusmn;0.52</sub></td>
+									<td>14.9 <sub>&plusmn;16.0</sub></td>
+									<td>45.5 <sub>&plusmn;13.7</sub></td>
+									<td>25.57</td>
+								</tr>
 
-							  <tr>
-							    <td>8</td>
-							    <td>39.2 <sub>&plusmn;3.2</sub> / 57.6 <sub>&plusmn;1.5</sub></td>
-							    <td>41.9 <sub>&plusmn;0.7</sub> / 41.9 <sub>&plusmn;0.7</sub></td>
-							    <td>38.8 <sub>&plusmn;1.5</sub> / 38.9 <sub>&plusmn;1.5</sub></td>
-							    <td>0.0 <sub>&plusmn;0.0</sub> / 0.0 <sub>&plusmn;0.0</sub></td>
-							    <td>0.54 <sub>&plusmn;0.4</sub> / 0.54 <sub>&plusmn;0.4</sub></td>
-							    <td>23.3 <sub>&plusmn;8.3</sub> / 58.1 <sub>&plusmn;3.4</sub></td>
-							    <td>52.0 <sub>&plusmn;8.5</sub> / 63.7 <sub>&plusmn;2.4</sub></td>
-							    <td>28.33 / 37.12</td>
-							  </tr>
+								<tr>
+									<td>8</td>
+									<td>39.0 <sub>&plusmn;5.9</sub> </td>
+									<td>40.1 <sub>&plusmn;0.5</sub> </td>
+									<td>35.7 <sub>&plusmn;0.9</sub> </td>
+									<td>0.1 <sub>&plusmn;0.15</sub> </td>
+									<td>0.42 <sub>&plusmn;0.19</sub></td>
+									<td>19.6 <sub>&plusmn;10.6</sub></td>
+									<td>57.7 <sub>&plusmn;9.0</sub> </td>
+									<td>27.78</td>
+								</tr>
 
-							  
+
+								<tr>
+									<td rowspan="4"><a
+											href="https://huggingface.co/sberbank-ai/rugpt3large_based_on_gpt2"
+											target="_blank">ruGPT-3 large</a></td>
+									<td>0</td>
+									<td>39.2 </td>
+									<td>40.8 </td>
+									<td>39.6 </td>
+									<td>0.14 </td>
+									<td>0.57 </td>
+									<td>0.3 </td>
+									<td>8.0 </td>
+									<td>18.15</td>
+								</tr>
+
+								<tr>
+									<td>1</td>
+									<td>36.7 <sub>&plusmn;0.0</sub></td>
+									<td>38.2 <sub>&plusmn;0.8</sub></td>
+									<td>39.8 <sub>&plusmn;1.0</sub></td>
+									<td>0.12 <sub>&plusmn;0.4</sub></td>
+									<td>0.47 <sub>&plusmn;0.11</sub></td>
+									<td>14.3 <sub>&plusmn;11.1</sub></td>
+									<td>49.6 <sub>&plusmn;7.1</sub> </td>
+									<td>25.6</td>
+								</tr>
+
+								<tr>
+									<td>4</td>
+									<td>38.8 <sub>&plusmn;2.9</sub> </td>
+									<td>40.9 <sub>&plusmn;0.8</sub> </td>
+									<td>39.6 <sub>&plusmn;0.8</sub> </td>
+									<td>0.1 <sub>&plusmn;0.14</sub> </td>
+									<td>0.54 <sub>&plusmn;0.44</sub></td>
+									<td>11.8 <sub>&plusmn;12.4</sub></td>
+									<td>44.5 <sub>&plusmn;15/9</sub></td>
+									<td>25.1</td>
+								</tr>
+
+								<tr>
+									<td>8</td>
+									<td>39.2 <sub>&plusmn;3.2</sub></td>
+									<td>41.9 <sub>&plusmn;0.7</sub></td>
+									<td>38.8 <sub>&plusmn;1.5</sub></td>
+									<td>0.0 <sub>&plusmn;0.0</sub> </td>
+									<td>0.54 <sub>&plusmn;0.4</sub></td>
+									<td>23.3 <sub>&plusmn;8.3</sub></td>
+									<td>52.0 <sub>&plusmn;8.5</sub></td>
+									<td>28.33</td>
+								</tr>
+
+
 							</table>
-									
 
-								</tbody>
-							
 
-					</div>
+							<table style="width:100%">
 
-			</div>
+								<tr class="t-header">
+									<td><b>Model</b></td>
+									<td><b><i>k</i>-shot</b></td>
+									<td><b>Winograd</b></td>
+									<td><b>RuWorldTree</b></td>
+									<td><b>RuOpenBookQA</b></td>
+									<td><b>MultiQ</b></td>
+									<td><b>CheGeKa</b></td>
+									<td><b>Ethics<sub>1</sub></b></td>
+									<td><b>Ethics<sub>2</sub></b></td>
+									<td><b>Avg</b></td>
+								</tr>
+								<tr>
+									<td>Random</td>
+									<td>&#x2717;</td>
+									<td>51.3</td>
+									<td>26.1</td>
+									<td>21.6</td>
+									<td>&#x2717;</td>
+									<td>&#x2717;</td>
+									<td>47.9</td>
+									<td>52.0</td>
+									<td>&#x2717;</td>
+								</tr>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+								<tr>
+									<td>Linear</td>
+									<td>&#x2717;</td>
+									<td>58.0</td>
+									<td>25.8</td>
+									<td>25.2</td>
+									<td>&#x2717;</td>
+									<td>&#x2717;</td>
+									<td>68.6</td>
+									<td>65.3</td>
+									<td>&#x2717;</td>
+								</tr>
 
-	</body>
+								<tr>
+									<td>Human</td>
+									<td>&#x2717;</td>
+									<td>87.0</td>
+									<td>83.7</td>
+									<td>86.5</td>
+									<td>91.0</td>
+									<td>64.5</td>
+									<td>52.9</td>
+									<td>67.6</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td rowspan="4"><a
+											href="https://huggingface.co/sberbank-ai/rugpt3small_based_on_gpt2"
+											target="_blank">ruGPT-3 small</a></td>
+									<td>0</td>
+									<td> 57.9</td>
+									<td> 34.0</td>
+									<td> 34.0</td>
+									<td> 0.0</td>
+									<td>0.0</td>
+									<td> 55.5</td>
+									<td> 60.9</td>
+									<td>34.64</td>
+								</tr>
+
+								<tr>
+									<td>1</td>
+									<td>58.0 <sub>&plusmn;0.0</sub></td>
+									<td>33.5 <sub>&plusmn;0.4</sub></td>
+									<td>35.0 <sub>&plusmn;0.8</sub></td>
+									<td> 0.0 <sub>&plusmn;0.0</sub></td>
+									<td> 0.0 <sub>&plusmn;0.0</sub></td>
+									<td> 59.9 <sub>&plusmn;5.8</sub></td>
+									<td>60.8 <sub>&plusmn;5.7</sub></td>
+									<td>35.33</td>
+								</tr>
+
+								<tr>
+									<td>4</td>
+									<td>54.8 <sub>&plusmn;3.9</sub></td>
+									<td>34.3 <sub>&plusmn;0.9</sub></td>
+									<td>34.6 <sub>&plusmn;0.6</sub></td>
+									<td> 0.0 <sub>&plusmn;0.0</sub></td>
+									<td> 0.65 <sub>&plusmn;0.29</sub></td>
+									<td> 54.3 <sub>&plusmn;12.3</sub></td>
+									<td> 61.3 <sub>&plusmn;5.0</sub></td>
+									<td> 34.31</td>
+								</tr>
+
+								<tr>
+									<td>8</td>
+									<td>54.8 <sub>&plusmn;6.5</sub></td>
+									<td>35.1 <sub>&plusmn;0.8</sub></td>
+									<td>33.7 <sub>&plusmn;0.5</sub></td>
+									<td> 0.0 <sub>&plusmn;0.0</sub></td>
+									<td> 0.35 <sub>&plusmn;0.26</sub></td>
+									<td>50.4 <sub>&plusmn;4.0</sub></td>
+									<td>61.7 <sub>&plusmn;4.2</sub></td>
+									<td>33.56</td>
+								</tr>
+
+
+								<tr>
+									<td rowspan="4"><a
+											href="https://huggingface.co/sberbank-ai/rugpt3medium_based_on_gpt2"
+											target="_blank">ruGPT-3 medium</a></td>
+									<td>0</td>
+									<td> 57.2</td>
+									<td> 38.0</td>
+									<td> 34.8</td>
+									<td> 0.0</td>
+									<td> 0.0</td>
+									<td>68.3</td>
+									<td>44.1</td>
+									<td> 34.71</td>
+								</tr>
+
+								<tr>
+									<td>1</td>
+									<td>58.0 <sub>&plusmn;0.0</sub></td>
+									<td>36.3 <sub>&plusmn;0.6</sub></td>
+									<td>36.8 <sub>&plusmn;0.8</sub></td>
+									<td> 0.0 <sub>&plusmn;0.0</sub></td>
+									<td> 0.0 <sub>&plusmn;0.0</sub></td>
+									<td> 59.9 <sub>&plusmn;5.8</sub></td>
+									<td>60.8 <sub>&plusmn;5.7</sub></td>
+									<td>35.99</td>
+								</tr>
+
+								<tr>
+									<td>4</td>
+									<td>57.9 <sub>&plusmn;0.6</sub></td>
+									<td>38.8 <sub>&plusmn;1.0</sub></td>
+									<td>36.4 <sub>&plusmn;1.3</sub></td>
+									<td> 0.0 <sub>&plusmn;0.0</sub></td>
+									<td> 0.92 <sub>&plusmn;0.53</sub></td>
+									<td> 58.6 <sub>&plusmn;13.1</sub></td>
+									<td> 59.0 <sub>&plusmn;7.3</sub></td>
+									<td>35.74</td>
+								</tr>
+
+								<tr>
+									<td>8</td>
+									<td>54.3 <sub>&plusmn;6.5</sub></td>
+									<td>40.1 <sub>&plusmn;0.5</sub></td>
+									<td>35.8 <sub>&plusmn;1.0</sub></td>
+									<td>0.0 <sub>&plusmn;0.0</sub></td>
+									<td> 0.42 <sub>&plusmn;0.19</sub></td>
+									<td> 60.1 <sub>&plusmn;5.1</sub></td>
+									<td>64.2 <sub>&plusmn;2.1</sub></td>
+									<td> 36.83</td>
+								</tr>
+
+
+								<tr>
+									<td rowspan="4"><a
+											href="https://huggingface.co/sberbank-ai/rugpt3large_based_on_gpt2"
+											target="_blank">ruGPT-3 large</a></td>
+									<td>0</td>
+									<td> 55.5</td>
+									<td> 40.7</td>
+									<td> 39.6</td>
+									<td> 0.0</td>
+									<td> 0.0</td>
+									<td>68.6</td>
+									<td>44.9</td>
+									<td> 35.73</td>
+								</tr>
+
+								<tr>
+									<td>1</td>
+									<td>58.0 <sub>&plusmn;0.0</sub></td>
+									<td>38.2 <sub>&plusmn;0.8</sub></td>
+									<td>39.8 <sub>&plusmn;1.1</sub></td>
+									<td>0.0 <sub>&plusmn;0.0</sub></td>
+									<td> 0.0 <sub>&plusmn;0.0</sub></td>
+									<td> 59.9 <sub>&plusmn;5.8</sub></td>
+									<td>60.8 <sub>&plusmn;5.7</sub></td>
+									<td>36.69</td>
+								</tr>
+
+								<tr>
+									<td>4</td>
+									<td>58.4 <sub>&plusmn;0.5</sub></td>
+									<td>40.8 <sub>&plusmn;0.8</sub></td>
+									<td>39.6 <sub>&plusmn;0.8</sub></td>
+									<td>0.0 <sub>&plusmn;0.0</sub></td>
+									<td> 0.54 <sub>&plusmn;0.4</sub></td>
+									<td> 60.4 <sub>&plusmn;11.1</sub></td>
+									<td> 59.6 <sub>&plusmn;8.1</sub></td>
+									<td> 36.96</td>
+								</tr>
+
+								<tr>
+									<td>8</td>
+									<td> 57.6 <sub>&plusmn;1.5</sub></td>
+									<td> 41.9 <sub>&plusmn;0.7</sub></td>
+									<td> 38.9 <sub>&plusmn;1.5</sub></td>
+									<td>0.0 <sub>&plusmn;0.0</sub></td>
+									<td> 0.54 <sub>&plusmn;0.4</sub></td>
+									<td> 58.1 <sub>&plusmn;3.4</sub></td>
+									<td> 63.7 <sub>&plusmn;2.4</sub></td>
+									<td> 37.12</td>
+								</tr>
+
+
+							</table>
+
+
+							</tbody>
+
+
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
