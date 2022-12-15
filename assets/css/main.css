@@ -37,6 +37,41 @@ ol, ul {
 	list-style: none;
 }
 
+.aligncenter {
+  display: block;
+  margin: 0 auto;
+}
+
+.small-margin  {
+	margin: 0 !important;
+}
+
+.parentCell{
+        position: relative;
+    }
+
+.tooltip{
+    display: none;
+    position: absolute; 
+    z-index: 100;
+    background-color: transparent;
+    border-color: transparent;
+    padding: 7px;
+    color: black; 
+    top: 0.15em; 
+    left: -0.5em;
+}
+
+.parentCell:hover {
+	display: block;
+	color: transparent;
+}
+
+.parentCell:hover span.tooltip{
+    display:block;
+}
+
+
 blockquote, q {
 	quotes: none;
 }
@@ -3821,4 +3856,44 @@ input, select, textarea {
     margin-top: 5px;
   }
 }
+
+
+#button {
+  display: inline-block;
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  border-color: transparent;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#button::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#button:hover {
+  cursor: pointer;
+  background-color: rgb(10,10,10);
+}
+#button:active {
+  background-color: #555;
+}
+#button.show {
+  opacity: 1;
+  visibility: visible;
+}
+
 
