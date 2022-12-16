@@ -7,9 +7,12 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
+
+		<a id="button"></a>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -23,7 +26,7 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li><a href="index.html#intro" class="active">About</a></li>
+							<li><a href="index.html#intro">About</a></li>
 							<li><a href="https://arxiv.org/abs/2210.12813" target="_blank">Paper</a></li>
 							<li><a href="index.html#toolkit">Toolkit</a></li>
 							<li><a href="index.html#leaderboard">Leaderboard</a></li>
@@ -43,7 +46,7 @@
 										<header class="major">
 											<h2><strong>Datasets</strong></h2>
 										</header>
-										<p>See detailed description of the datasets composing TAPE:</p>
+										<p>See the detailed description of the datasets composing TAPE:</p>
 
 										<ul><ul><ul>
 											<li><a href="datasets.html#winograd">Winograd</a>				</li>
@@ -881,6 +884,22 @@ Test and train data sets are disjoint with respect to individual questions, but 
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				var btn = $('#button');
+
+				$(window).scroll(function() {
+				  if ($(window).scrollTop() > 300) {
+				    btn.addClass('show');
+				  } else {
+				    btn.removeClass('show');
+				  }
+				});
+
+				btn.on('click', function(e) {
+				  e.preventDefault();
+				  $('html, body').animate({scrollTop:0}, '300');
+				});
+			</script>
 
 	</body>
 </html>

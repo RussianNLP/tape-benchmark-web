@@ -6,9 +6,12 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
+
+		<a id="button"></a>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -22,7 +25,7 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li><a href="index.html#intro" class="active">About</a></li>
+							<li><a href="index.html#intro">About</a></li>
 							<li><a href="https://arxiv.org/abs/2210.12813" target="_blank">Paper</a></li>
 							<li><a href="index.html#toolkit">Toolkit</a></li>
 							<li><a href="index.html#leaderboard">Leaderboard</a></li>
@@ -42,14 +45,13 @@
 										<header class="major">
 											<h2><strong>Model Evaluation</strong></h2>
 										</header>
-										<p>See detailed model performance for the baseline models:</p>
+										<p>For a more detailed evaluation results of the models see below:</p>
 
 										<ul><ul><ul>
 												<li><a href="baselines.html#small">ruGPT-3 Small</a>				</li>
 											<li><a href="baselines.html#medium">ruGPT-3 Medium</a></li>
 											<li><a href="baselines.html#large">ruGPT-3 Large</a></li>
 											</ul></ul></ul>
-											<img src="images/pipeline.png" alt="Evaluation pipeline" width="700">
                     
 									</div>
 								</div>
@@ -62,48 +64,65 @@
 										<header class="major">
 											<h2><strong>ruGPT-3 Small</strong></h2>
 										</header>
-										<p>See detailed model performance for the baseline models:</p>
-<h3>Winograd</h3>
-<img src="images/Winograd/small_0_shot.png" width="800">
-<img src="images/Winograd/small_1_shot.png" width="800">
-<img src="images/Winograd/small_4_shot.png" width="800">
-<img src="images/Winograd/small_8_shot.png" width="800">
+<details>
+    <summary><font size="4.5">Winograd</font></summary>
+	<img src="images/Winograd/small_0_shot.png" width="800">
+	<img src="images/Winograd/small_1_shot.png" width="800">
+	<img src="images/Winograd/small_4_shot.png" width="800">
+	<img src="images/Winograd/small_8_shot.png" width="800">
+</details>
 
-<h3>RuWorldTree</h3>
-<img src="images/RuWorldTree/small_0_shot.png" width="800">
-<img src="images/RuWorldTree/small_1_shot.png" width="800">
-<img src="images/RuWorldTree/small_4_shot.png" width="800">
-<img src="images/RuWorldTree/small_8_shot.png" width="800">
+<details>
+    <summary><font size="4.5">RuWorldTree</font></summary>
+	<img src="images/RuWorldTree/small_0_shot.png" width="800">
+	<img src="images/RuWorldTree/small_1_shot.png" width="800">
+	<img src="images/RuWorldTree/small_4_shot.png" width="800">
+	<img src="images/RuWorldTree/small_8_shot.png" width="800">
+</details>
 
-<h3>RuOpenBookQA</h3>
-<img src="images/RuOpenBookQA/small_0_shot.png" width="800">
-<img src="images/RuOpenBookQA/small_1_shot.png" width="800">
-<img src="images/RuOpenBookQA/small_4_shot.png" width="800">
-<img src="images/RuOpenBookQA/small_8_shot.png" width="800">
+<details>
+	<summary><font size="4.5">RuOpenBookQA</font></summary>
+	<img src="images/RuOpenBookQA/small_0_shot.png" width="800">
+	<img src="images/RuOpenBookQA/small_1_shot.png" width="800">
+	<img src="images/RuOpenBookQA/small_4_shot.png" width="800">
+	<img src="images/RuOpenBookQA/small_8_shot.png" width="800">
+</details>
 
-<h3>Ethics_1</h3>
-<img src="images/Ethics_1/small_0_shot.png" width="800">
-<img src="images/Ethics_1/small_1_shot.png" width="800">
-<img src="images/Ethics_1/small_4_shot.png" width="800">
-<img src="images/Ethics_1/small_8_shot.png" width="800">
 
-<h3>Ethics_2</h3>
-<img src="images/Ethics_2/small_0_shot.png" width="800">
-<img src="images/Ethics_2/small_1_shot.png" width="800">
-<img src="images/Ethics_2/small_4_shot.png" width="800">
-<img src="images/Ethics_2/small_8_shot.png" width="800">
+<details>
+	<summary><font size="4.5">Ethics_1</font></summary>
+	<img src="images/Ethics_1/small_0_shot.png" width="800">
+	<img src="images/Ethics_1/small_1_shot.png" width="800">
+	<img src="images/Ethics_1/small_4_shot.png" width="800">
+	<img src="images/Ethics_1/small_8_shot.png" width="800">
+</details>
 
-<h3>MultiQ</h3>
-<img src="images/MultiQ/small_0_shot.png" width="800">
-<img src="images/MultiQ/small_1_shot.png" width="800">
-<img src="images/MultiQ/small_4_shot.png" width="800">
-<img src="images/MultiQ/small_8_shot.png" width="800">
 
-<h3>CheGeKa</h3>
-<img src="images/CheGeKa/small_0_shot.png" width="800">
-<img src="images/CheGeKa/small_1_shot.png" width="800">
-<img src="images/CheGeKa/small_4_shot.png" width="800">
-<img src="images/CheGeKa/small_8_shot.png" width="800">
+<details>
+	<summary><font size="4.5">Ethics_2</font></summary>
+	<img src="images/Ethics_2/small_0_shot.png" width="800">
+	<img src="images/Ethics_2/small_1_shot.png" width="800">
+	<img src="images/Ethics_2/small_4_shot.png" width="800">
+	<img src="images/Ethics_2/small_8_shot.png" width="800">
+</details>
+
+
+<details>
+	<summary><font size="4.5">MultiQ</font></summary>
+	<img src="images/MultiQ/small_0_shot.png" width="800">
+	<img src="images/MultiQ/small_1_shot.png" width="800">
+	<img src="images/MultiQ/small_4_shot.png" width="800">
+	<img src="images/MultiQ/small_8_shot.png" width="800">
+</details>
+
+
+<details>
+	<summary><font size="4.5">CheGeKa</font></summary>
+	<img src="images/CheGeKa/small_0_shot.png" width="800">
+	<img src="images/CheGeKa/small_1_shot.png" width="800">
+	<img src="images/CheGeKa/small_4_shot.png" width="800">
+	<img src="images/CheGeKa/small_8_shot.png" width="800">
+</details>
 
 											
                     
@@ -117,49 +136,67 @@
 										<header class="major">
 											<h2><strong>ruGPT-3 Medium</strong></h2>
 										</header>
-										<p>See detailed model performance for the baseline models:</p>
-<h3>Winograd</h3>
-<img src="images/Winograd/medium_0_shot.png" width="800">
-<img src="images/Winograd/medium_1_shot.png" width="800">
-<img src="images/Winograd/medium_4_shot.png" width="800">
-<img src="images/Winograd/medium_8_shot.png" width="800">
+<details>
+	<summary><font size="4.5">Winograd</font></summary>
+	<img src="images/Winograd/medium_0_shot.png" width="800">
+	<img src="images/Winograd/medium_1_shot.png" width="800">
+	<img src="images/Winograd/medium_4_shot.png" width="800">
+	<img src="images/Winograd/medium_8_shot.png" width="800">
+</details>
 
-<h3>RuWorldTree</h3>
-<img src="images/RuWorldTree/medium_0_shot.png" width="800">
-<img src="images/RuWorldTree/medium_1_shot.png" width="800">
-<img src="images/RuWorldTree/medium_4_shot.png" width="800">
-<img src="images/RuWorldTree/medium_8_shot.png" width="800">
 
-<h3>RuOpenBookQA</h3>
-<img src="images/RuOpenBookQA/medium_0_shot.png" width="800">
-<img src="images/RuOpenBookQA/medium_1_shot.png" width="800">
-<img src="images/RuOpenBookQA/medium_4_shot.png" width="800">
-<img src="images/RuOpenBookQA/medium_8_shot.png" width="800">
+<details>
+	<summary><font size="4.5">RuWorldTree</font></summary>
+	<img src="images/RuWorldTree/medium_0_shot.png" width="800">
+	<img src="images/RuWorldTree/medium_1_shot.png" width="800">
+	<img src="images/RuWorldTree/medium_4_shot.png" width="800">
+	<img src="images/RuWorldTree/medium_8_shot.png" width="800">
+</details>
 
-<h3>Ethics_1</h3>
-<img src="images/Ethics_1/medium_0_shot.png" width="800">
-<img src="images/Ethics_1/medium_1_shot.png" width="800">
-<img src="images/Ethics_1/medium_4_shot.png" width="800">
-<img src="images/Ethics_1/medium_8_shot.png" width="800">
 
-<h3>Ethics_2</h3>
-<img src="images/Ethics_2/medium_0_shot.png" width="800">
-<img src="images/Ethics_2/medium_1_shot.png" width="800">
-<img src="images/Ethics_2/medium_4_shot.png" width="800">
-<img src="images/Ethics_2/medium_8_shot.png" width="800">
+<details>
+	<summary><font size="4.5">RuOpenBookQA</font></summary>
+	<img src="images/RuOpenBookQA/medium_0_shot.png" width="800">
+	<img src="images/RuOpenBookQA/medium_1_shot.png" width="800">
+	<img src="images/RuOpenBookQA/medium_4_shot.png" width="800">
+	<img src="images/RuOpenBookQA/medium_8_shot.png" width="800">
+</details>
 
-<h3>MultiQ</h3>
-<img src="images/MultiQ/medium_0_shot.png" width="800">
-<img src="images/MultiQ/medium_1_shot.png" width="800">
-<img src="images/MultiQ/medium_4_shot.png" width="800">
-<img src="images/MultiQ/medium_8_shot.png" width="800">
 
-<h3>CheGeKa</h3>
-<img src="images/CheGeKa/medium_0_shot.png" width="800">
-<img src="images/CheGeKa/medium_1_shot.png" width="800">
-<img src="images/CheGeKa/medium_4_shot.png" width="800">
-<img src="images/CheGeKa/medium_8_shot.png" width="800">
+<details>
+	<summary><font size="4.5">Ethics_1</font></summary>
+	<img src="images/Ethics_1/medium_0_shot.png" width="800">
+	<img src="images/Ethics_1/medium_1_shot.png" width="800">
+	<img src="images/Ethics_1/medium_4_shot.png" width="800">
+	<img src="images/Ethics_1/medium_8_shot.png" width="800">
+</details>
 
+
+<details>
+	<summary><font size="4.5">Ethics_2</font></summary>
+	<img src="images/Ethics_2/medium_0_shot.png" width="800">
+	<img src="images/Ethics_2/medium_1_shot.png" width="800">
+	<img src="images/Ethics_2/medium_4_shot.png" width="800">
+	<img src="images/Ethics_2/medium_8_shot.png" width="800">
+</details>
+
+
+<details>
+	<summary><font size="4.5">MultiQ</font></summary>
+	<img src="images/MultiQ/medium_0_shot.png" width="800">
+	<img src="images/MultiQ/medium_1_shot.png" width="800">
+	<img src="images/MultiQ/medium_4_shot.png" width="800">
+	<img src="images/MultiQ/medium_8_shot.png" width="800">
+</details>
+
+
+<details>
+	<summary><font size="4.5">CheGeKa</font></summary>
+	<img src="images/CheGeKa/medium_0_shot.png" width="800">
+	<img src="images/CheGeKa/medium_1_shot.png" width="800">
+	<img src="images/CheGeKa/medium_4_shot.png" width="800">
+	<img src="images/CheGeKa/medium_8_shot.png" width="800">
+</details>
 											
                     
 									</div>
@@ -172,49 +209,67 @@
 										<header class="major">
 											<h2><strong>ruGPT-3 Large</strong></h2>
 										</header>
-										<p>See detailed model performance for the baseline models:</p>
-<h3>Winograd</h3>
-<img src="images/Winograd/large_0_shot.png" width="800">
-<img src="images/Winograd/large_1_shot.png" width="800">
-<img src="images/Winograd/large_4_shot.png" width="800">
-<img src="images/Winograd/large_8_shot.png" width="800">
+<details>
+	<summary><font size="4.5">Winograd</font></summary>
+	<img src="images/Winograd/large_0_shot.png" width="800">
+	<img src="images/Winograd/large_1_shot.png" width="800">
+	<img src="images/Winograd/large_4_shot.png" width="800">
+	<img src="images/Winograd/large_8_shot.png" width="800">
+</details>
 
-<h3>RuWorldTree</h3>
-<img src="images/RuWorldTree/large_0_shot.png" width="800">
-<img src="images/RuWorldTree/large_1_shot.png" width="800">
-<img src="images/RuWorldTree/large_4_shot.png" width="800">
-<img src="images/RuWorldTree/large_8_shot.png" width="800">
 
-<h3>RuOpenBookQA</h3>
-<img src="images/RuOpenBookQA/large_0_shot.png" width="800">
-<img src="images/RuOpenBookQA/large_1_shot.png" width="800">
-<img src="images/RuOpenBookQA/large_4_shot.png" width="800">
-<img src="images/RuOpenBookQA/large_8_shot.png" width="800">
+<details>
+	<summary><font size="4.5">RuWorldTree</font></summary>
+	<img src="images/RuWorldTree/large_0_shot.png" width="800">
+	<img src="images/RuWorldTree/large_1_shot.png" width="800">
+	<img src="images/RuWorldTree/large_4_shot.png" width="800">
+	<img src="images/RuWorldTree/large_8_shot.png" width="800">
+</details>
 
-<h3>Ethics_1</h3>
-<img src="images/Ethics_1/large_0_shot.png" width="800">
-<img src="images/Ethics_1/large_1_shot.png" width="800">
-<img src="images/Ethics_1/large_4_shot.png" width="800">
-<img src="images/Ethics_1/large_8_shot.png" width="800">
 
-<h3>Ethics_2</h3>
-<img src="images/Ethics_2/large_0_shot.png" width="800">
-<img src="images/Ethics_2/large_1_shot.png" width="800">
-<img src="images/Ethics_2/large_4_shot.png" width="800">
-<img src="images/Ethics_2/large_8_shot.png" width="800">
+<details>
+	<summary><font size="4.5">RuOpenBookQA</font></summary>
+	<img src="images/RuOpenBookQA/large_0_shot.png" width="800">
+	<img src="images/RuOpenBookQA/large_1_shot.png" width="800">
+	<img src="images/RuOpenBookQA/large_4_shot.png" width="800">
+	<img src="images/RuOpenBookQA/large_8_shot.png" width="800">
+</details>
 
-<h3>MultiQ</h3>
-<img src="images/MultiQ/large_0_shot.png" width="800">
-<img src="images/MultiQ/large_1_shot.png" width="800">
-<img src="images/MultiQ/large_4_shot.png" width="800">
-<img src="images/MultiQ/large_8_shot.png" width="800">
 
-<h3>CheGeKa</h3>
-<img src="images/CheGeKa/large_0_shot.png" width="800">
-<img src="images/CheGeKa/large_1_shot.png" width="800">
-<img src="images/CheGeKa/large_4_shot.png" width="800">
-<img src="images/CheGeKa/large_8_shot.png" width="800">
+<details>
+	<summary><font size="4.5">Ethics_1</font></summary>
+	<img src="images/Ethics_1/large_0_shot.png" width="800">
+	<img src="images/Ethics_1/large_1_shot.png" width="800">
+	<img src="images/Ethics_1/large_4_shot.png" width="800">
+	<img src="images/Ethics_1/large_8_shot.png" width="800">
+</details>
 
+
+<details>
+	<summary><font size="4.5">Ethics_2</font></summary>
+	<img src="images/Ethics_2/large_0_shot.png" width="800">
+	<img src="images/Ethics_2/large_1_shot.png" width="800">
+	<img src="images/Ethics_2/large_4_shot.png" width="800">
+	<img src="images/Ethics_2/large_8_shot.png" width="800">
+</details>
+
+
+<details>
+	<summary><font size="4.5">MultiQ</font></summary>
+	<img src="images/MultiQ/large_0_shot.png" width="800">
+	<img src="images/MultiQ/large_1_shot.png" width="800">
+	<img src="images/MultiQ/large_4_shot.png" width="800">
+	<img src="images/MultiQ/large_8_shot.png" width="800">
+</details>
+
+
+<details>
+	<summary><font size="4.5">CheGeKa</font></summary>
+	<img src="images/CheGeKa/large_0_shot.png" width="800">
+	<img src="images/CheGeKa/large_1_shot.png" width="800">
+	<img src="images/CheGeKa/large_4_shot.png" width="800">
+	<img src="images/CheGeKa/large_8_shot.png" width="800">
+</details>
 											
                     
 									</div>
@@ -235,6 +290,22 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				var btn = $('#button');
+
+				$(window).scroll(function() {
+				  if ($(window).scrollTop() > 300) {
+				    btn.addClass('show');
+				  } else {
+				    btn.removeClass('show');
+				  }
+				});
+
+				btn.on('click', function(e) {
+				  e.preventDefault();
+				  $('html, body').animate({scrollTop:0}, '300');
+				});
+			</script>
 
 	</body>
 </html>
