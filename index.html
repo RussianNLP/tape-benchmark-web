@@ -1,6 +1,149 @@
 <!DOCTYPE HTML>
-
 <html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<<<<<<< HEAD
+    <head>
+        <title>TAPE Benchmark</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <noscript>
+            <link rel="stylesheet" href="assets/css/noscript.css" />
+        </noscript>
+    </head>
+    <body class="is-preload">
+        <a id="button"></a>
+        <!-- Wrapper -->
+        <div id="wrapper" style="width:83%">
+            <!-- Header -->
+            <header id="header" class="alt">
+                <span class="logo"><img src="images/logo.png" alt="" /></span>
+                <h1><strong>TAPE Benchmark: Assessing Few-shot Russian Language Understanding</strong></h1>
+            </header>
+            <!-- Nav -->
+            <nav id="nav" style="width:inherit">
+                <ul>
+                    <li><a href="index.html#intro">About</a></li>
+                    <li><a href="https://arxiv.org/abs/2210.12813" target="_blank">Paper</a></li>
+                    <li><a href="index.html#toolkit">Toolkit</a></li>
+                    <li><a href="index.html#leaderboard">Leaderboard</a></li>
+                    <li><a href="datasets.html#intro">Datasets</a></li>
+                    <li><a href="baselines.html#intro">Baselines</a></li>
+                </ul>
+            </nav>
+            <!-- Main -->
+            <div id="main">
+                <!-- Introduction -->
+                <section id="intro" class="main">
+                    <div class="spotlight">
+                        <div class="content">
+                            <header class="major">
+                                <h2><strong>About TAPE</strong></h2>
+                            </header>
+                            <font size="3">
+                                <p> Assessing Few-shot Russian Language Understanding.</p>
+                                <p>TAPE (Text Attack and Perturbation Evaluation) is a novel benchmark for few-shot Russian language understanding evaluation that includes six complex NLU tasks, covering multi-hop reasoning, ethical concepts, logic and commonsense knowledge. TAPE's design focuses on systematic zero-shot and few-shot NLU evaluation across different axes:</p>
+                                <ul>
+                                    <ul>
+                                        <ul>
+                                            <li>subpopulations for nuanced interpretation</li>
+                                            <li>linguistic-oriented adversarial attacks and perturbations for analysing robustness.
+                                            </li>
+                                        </ul>
+                                    </ul>
+                                </ul>
+                                <p> General data collection principles of TAPE are based on combining "intellectual abilities" needed to solve GLUE-like tasks, ranging from world knowledge to logic and commonsense reasoning. Based on the GLUE format, we have built six new datasets from the ground up, each of them requiring the modeling abilities of at least two skills:</p>
+                                <ul>
+                                    <ul>
+                                        <ul>
+                                            <li> Logical reasoning (Winograd scheme)
+                                            </li>
+                                            <li> Reasoning with world knowledge (RuOpenBookQA, RuWorldTree, MultiQ, and CheGeKa)</li>
+                                            <li> Multi-hop reasoning (MultiQ)
+                                            </li>
+                                            <li> Ethical judgments and reasoning (Ethics)
+                                            </li>
+                                        </ul>
+                                    </ul>
+                                </ul>
+                            </font>
+                        </div>
+                    </div>
+                </section>
+                <!-- Second Section -->
+                <section id="toolkit" class="main">
+                <header class="major">
+                <h2><strong>TAPE Toolkit</strong></h2>
+                <img class="aligncenter" src="images/pipeline.png" alt="Evaluation pipeline" width="700">
+                <p></p>
+                <font size="3">
+                <p>
+                <ul>
+                    <ul>
+                        <ul>
+                            <li>(a) D<sub>test</sub> is passed to the adversarial framework to create the adversarial D<sub>test</sub> that includes the original and adversarial examples.</li>
+                            <li>
+                                (b) We randomly sample five sets of demonstration examples from D<sub>train</sub> for each 
+                                <it>k</it>
+                                ∈ {1, 4, 8}. In the zero-shot scenario, we skip this stage.
+                            </li>
+                            <li>(c) After that, we merge the demonstrations, when applicable, with the examples from the adversarial Dtest to construct evaluation episodes.</li>
+                            <li>(d) Each episode is used to obtain predictions from the model.</li>
+                            <li>(e) The performance is summarized in a diagnostic evaluation report.</li>
+                        </ul>
+                    </ul>
+                </ul>
+                <p>The perturbations, included in the framework, can be divided into two categories:</p>
+                <ul>
+                    <ul>
+                        <ul>
+                            <li><strong>Word-Level Perturbations:</strong> spelling (mimicking spelling mistakes) and modality (replacement of the input with emojis)</li>
+                            <li><strong>Sentence-Level Perturbations:</strong> random (token deletion and swaps), distraction (generation of additional text) and paraphrases (generating context variations)</li>
+                        </ul>
+                    </ul>
+                </ul>
+                </p>
+                <p></p>
+                <div class="content">
+                    <h3 ><font size="5">Resources</font></h3>
+                    <p></p>
+                    <p class="small-margin">
+                        <font size="4">
+                        <a href="https://github.com/RussianNLP/TAPE">TAPE: Evaluation framework</a>
+                        </font>
+                    </p>
+                    <p>
+                        <font size="3">
+                        All of the code for model evaluation (including evaluation reports and subpopulation analysis), as well as the code to reproduce the baselines mentioned in the paper are available on our <a href="https://github.com/RussianNLP/TAPE">GitHub page</a>.
+                        </font>
+                    </p>
+                    <p class="small-margin">
+                        <font size="4">
+                        <a href="https://huggingface.co/datasets/RussianNLP/tape">TAPE: Datasets</a>
+                        </font>
+                    </p>
+                    <p>
+                        <font size="3">
+                        TAPE's datasets are available through the <a href="https://huggingface.co/datasets/RussianNLP/tape">HuggingFace dataset library</a>. The datailed description of each task can be found <a href="datasets.html#intro">here</a>. 
+                        </font>
+                    </p>
+                    <p class="small-margin">
+                        <font size="4">
+                        <a href="https://github.com/RussianNLP/rutransform">RuTransform: Framework for adversarial attacks and perturbations</a>
+                        </font>
+                    </p>
+                    <p>
+                        <font size="3">
+                        Additionally, we release RuTransform, a Python framework for adversarial attacks and text data augmentation for Russian. The framework presents a stand-alone tool for adversarial data creation and model evaluation for Russian, that can also be used for adversarial model training and data augmentation. More information on the framework can be found in the <a href="https://github.com/RussianNLP/rutransform">RuTransform GitHub repository</a>.
+                        </font>
+                    </p>
+                    <p></p>
+                </div>
+                <p class="small-margin"><font size="5">Cite us:</font></p>
+                <div class="alert1 alert1-info" role="alert1">
+                    <font size="3">
+                        <pre><code>@article{taktasheva2022tape,
+=======
 
 	<head>
 		<title>TAPE Benchmark</title>
@@ -104,12 +247,12 @@
 										</p>
 										<p class="small-margin">
 											<font size="4">
-												<a href="https://huggingface.co/datasets/RussianNLP/tape">TAPE: Datasets</a>
+												<a href="https://huggingface.com/datasets/RussianNLP/tape">TAPE: Datasets</a>
 											</font>
 										</p>
 										<p>
 											<font size="3">
-											TAPE's datasets are available through the <a href="https://huggingface.co/datasets/RussianNLP/tape">HuggingFace dataset library</a>. The datailed description of each task can be found <a href="datasets.html#intro">here</a>. 
+											TAPE's datasets are available through the <a href="https://huggingface.com/datasets/RussianNLP/tape">HuggingFace dataset library</a>. The datailed description of each task can be found <a href="datasets.html#intro">here</a>. 
 											</font>
 										</p>
 										<p class="small-margin">
@@ -129,10 +272,47 @@
         						
 									<div class="alert1 alert1-info" role="alert1"><font size="3">
 										<pre><code>@article{taktasheva2022tape,
+>>>>>>> c58a02f327244f8ed3cad1c89d3c7371660f6bb7
 	title={TAPE: Assessing Few-shot Russian Language Understanding},
 	author={Taktasheva, Ekaterina and Shavrina, Tatiana and Fenogenova, Alena and Shevelev, Denis and Katricheva, Nadezhda and Tikhonova, Maria and Akhmetgareeva, Albina and Zinkevich, Oleg and Bashmakova, Anastasiia and Iordanskaia, Svetlana and others},
 	journal={arXiv preprint arXiv:2210.12813},
 	year={2022}
+<<<<<<< HEAD
+}</code></pre>
+                    </font>
+                    <p></p>
+                </div>
+                <!-- Get Started -->
+                <section id="leaderboard" class="main">
+                <header class="major">
+                    <h2><strong>Leaderboard</strong></h2>
+                </header>
+                <p class="small-margin" align="left">
+                    <font size="3">
+                        <strong><font size="4" color="red">Report your results:</font></strong>
+                        If you have new results experimented with TAPE, please see submission instructions <a href="https://github.com/RussianNLP/TAPE#submit-to-tape">here</a>. For any inquiries send an email to
+                        <a href = "mailto:tapebenchmark@gmail.com">tapebenchmark@gmail.com</a>.
+                <p>The goal of this leaderboard is to collect research works under the evaluation framework and to measure the true progress of the field. So it is encouraged that you <strong><font color="red">attach a link to the reproducible source codes</font></strong>. Thank you!</p>
+                </font>
+                <p><font size="3" style="margin: 0"><b>Metrics</b>: F1-score/accuracy (EM for CheGeKa and MultiQ). <b>Abbreviations</b>: RWT - RuWorldTree; ROBQA - RuOpenBookQA.</font></p>
+                </p>
+                <div id="tape-leaderboard"></div>
+                <p></p>
+            </div>
+        </div>
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/scroll.js"></script>
+        <script src="assets/js/leaderboard.js" defer></script>
+    </body>
+</html>
+=======
 }</code></pre></font>
 										<p></p>
 									</div>
@@ -391,3 +571,4 @@
 </body>
 
 </html>
+>>>>>>> c58a02f327244f8ed3cad1c89d3c7371660f6bb7

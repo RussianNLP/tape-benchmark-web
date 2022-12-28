@@ -48,6 +48,7 @@ ol, ul {
 
 .parentCell{
         position: relative;
+        width: flow(100% + 2em);
     }
 
 .tooltip{
@@ -59,7 +60,8 @@ ol, ul {
     padding: 7px;
     color: black; 
     top: 0.15em; 
-    left: -0.5em;
+    left: -0.7em;
+    /*text-overflow: auto;*/
 }
 
 .parentCell:hover {
@@ -3900,8 +3902,15 @@ input, select, textarea {
 }
 
 
+<<<<<<< HEAD
+
+.t-header {
+	font-size: initial;
+}
+=======
 .t-header {
 	font-size: initial;
 }
 
 
+>>>>>>> c58a02f327244f8ed3cad1c89d3c7371660f6bb7
